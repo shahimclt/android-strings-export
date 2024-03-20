@@ -1,13 +1,17 @@
-# android-strings-export
+# Android Strings Export
+
+> No Idea why this hasnt been done before
+
 A Python script to automate importing and exporting `strings.xml` files to excel. This will help you handover the strings for translation to non technical users
 
 ## Steps to use:
-    * Have python installed
-    * Copy the files to the root of your project
-    * if you need to avoid accidentally commiting the exported XLSX to Git, add this to `.gitignore`: `/*.xlsx`
-    * install dependencies: `pip3 install -r .\py_requirements.txt`
-    * run the script: `python string_export.py`
-    * Enjoy
+
+* Have python installed
+* Copy the files to the root of your project
+* if you need to avoid accidentally commiting the exported XLSX to Git, add this to `.gitignore`: `/*.xlsx`
+* install dependencies: `pip3 install -r .\py_requirements.txt`
+* run the script: `python string_export.py`
+* Enjoy
 
 ## Export all strings to XLSX:
 

@@ -26,6 +26,14 @@ for column in df.columns:
         root = srcTree.getroot()
         # for string in :
 
+        # Find the last element
+        last_element = None
+        for element in root.iterfind("./string"):
+            last_element = element
+
+        if last_element is not None:
+            last_element.tail = "\n    "
+
         # Iterate over each row in the DataFrame
         for _, row in df.iterrows():
             # Get the string name
@@ -45,7 +53,15 @@ for column in df.columns:
                 # Create an XML element for the string
                 string_element = etree.Element("string", {"name": string_name})
                 string_element.text = string_value
+                string_element.tail = "\n    "
                 root.append(string_element)
+
+        last_element = None
+        for element in root.iterfind("./string"):
+            last_element = element
+
+        if last_element is not None:
+            last_element.tail = "\n"
 
         srcTree.write(filepath, pretty_print=True, xml_declaration=True, encoding='utf-8')
 
